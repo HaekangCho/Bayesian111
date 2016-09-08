@@ -1,0 +1,27 @@
+---
+title: "Example1"
+author: "HaekangCho"
+date: "2016³â 9¿ù 8ÀÏ"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Oznoe and Wind simple linear regression
+
+
+```{r air}
+data("airquality")
+head(airquality)
+fit = lm(Ozone~Wind,data = airquality)
+summary(fit)
+```
+## Plot
+
+```{r airplot}
+x = airquality$Wind
+y = airquality$Ozone
+plot(x,y)
+abline(fit, col="red")
